@@ -1,0 +1,16 @@
+package com.project.service;
+
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
+import org.springframework.web.bind.annotation.RequestParam;
+
+import com.project.bean.User;
+
+public interface UserService{
+
+	int addUser(User user);
+	
+	@Query("select u FROM User u WHERE u.email =:e and u.password =:p")
+	int validate(@Param("e") String email,@Param("p") String password);
+	
+}

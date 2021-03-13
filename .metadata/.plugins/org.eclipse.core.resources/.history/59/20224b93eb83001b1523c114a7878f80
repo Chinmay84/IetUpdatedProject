@@ -1,0 +1,22 @@
+package com.project.bean;
+
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+import lombok.Data;
+
+@Entity
+@Data
+public class User {
+
+	@Id
+	private int id;
+	private String fname;
+	private String lname;
+	private String email;
+	private String passowrd;
+	private String address;
+	
+	
+	
+}

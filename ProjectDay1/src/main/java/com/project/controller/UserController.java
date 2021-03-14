@@ -35,7 +35,7 @@ public class UserController {
 	public String forAddUser(@RequestBody User user)
 	{
 		if(userService.addUser(user)>0) {
-			return "redirect:/login";
+			return "register successfull";
 		}
 		return "register not successful";
 	}
@@ -77,6 +77,14 @@ public class UserController {
 			return null;
 		}
 	}
+	
+	@GetMapping("/logout")
+	public String forLogout()
+	{
+		return "logout";
+	}
+	
+
 
 	
 	

@@ -1,0 +1,298 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <title>facebook- log in or sign up</title>
+    <meta charset="utf-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+    integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link href="facebook.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <header class="header container-fluid">
+        <div class="container features">
+            <div class="row">
+                <div class="col mt-3 pl-5">
+                    <a href="#" class="facebook-text text-white text-left" data-toggle="tooltip" title="Go to Facebook home">
+                    facebook</a>
+                </div>
+                    <div class="col mt-2 pl-3.1 login-box">
+                        <div class="row">
+                            <div class="col ml-1 pl-2.1">
+                              <label>Email or Phone</label>
+                              <input type="text" class="border-1 p-1 m-0 h-15 w-142">
+                            </div>
+                            <div class="col ml-1 pl-1">
+                              <label>Password</label>
+                              <input type="text" class="border-1 p-1 m-0 h-15 w-142">
+                              <a href="#" class="forgotten">Forgotten Account?</a>
+                            </div>
+                            <div class="col">
+                              <label class="empty">Login</label>
+                              <div class="form-control-static ml-1 pl-1 pt-1">
+                                <button class="w-34 h-18 pl-1.5 pr-1.5 pt-0.5 pb-0.5 border-1">
+                                  Log in
+                                </button>
+                            </div>
+                    </div>
+            </div>        
+        </div>    
+    </header>
+<div id="gradient">
+    <div class="container mainarea">
+    <div class="firstcol">
+        <div class="head1">Facebook helps you connect and share with the
+        people in your life.</div>
+        <p><img src="image-icons/photos.png" alt="photos">&nbsp&nbsp&nbsp<strong>See photos and updates</strong>&nbsp;from friends in News Feed.</p>
+        <p><img src="image-icons/new.png" alt="new">&nbsp&nbsp&nbsp<strong>Share what's new</strong>&nbsp;in your life on your Timeline.</p>
+        <p><img src="image-icons/more.png" alt="more">&nbsp&nbsp&nbsp<strong>Find more</strong>&nbsp;of what you're looking for with Facebook Search.</p>           
+    </div> 
+    <div class="secondcol">
+        <div class="head2">Create an account</div>
+        <p class="free">It's free and always will be.</p>
+        <div class="grid">
+        <input class="inputbox" type="text" name="firstname" placeholder="First name">
+        <input class="inputbox" type="text" name="surname" placeholder="Surname">
+        <input class="mobile" type="text" name="mobilenumber" placeholder="Mobile number or email"><br>
+        <input class="password" type="password" name="password" placeholder="New password">
+        </div>
+        <div id="bday">Birthday</div>
+        <span>
+            <select name="month" id="birthmonth">
+                <option value="month">month</option>
+                <option value="jan">Jan</option>
+                <option value="feb">Feb</option>
+                <option value="mar">Mar</option>
+                <option value="apr">Apr</option>
+                <option value="may">May</option>
+                <option value="jun">Jun</option>
+                <option value="jul">Jul</option>
+                <option value="aug">Aug</option>
+                <option value="sep">Sep</option>
+                <option value="oct">Oct</option>
+                <option value="nov">Nov</option>
+                <option value="dec">Dec</option>
+            </select>
+            <select name="day" id="birthday">
+                <option value="day">Day</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+                <option value="11">11</option>
+                <option value="12">12</option>
+                <option value="13">13</option>
+                <option value="14">14</option>
+                <option value="15">15</option>
+                <option value="16">16</option>
+                <option value="17">17</option>
+                <option value="18">18</option>
+                <option value="19">19</option>
+                <option value="20">20</option>
+                <option value="21">21</option>
+                <option value="22">22</option>
+                <option value="23">23</option>
+                <option value="24">24</option>
+                <option value="25">25</option>
+                <option value="26">26</option>
+                <option value="27">27</option>
+                <option value="28">28</option>
+                <option value="29">29</option>
+                <option value="30">30</option>
+                <option value="31">31</option>
+            </select>
+            <select name="year" id="birthyear">
+                <option value="year">Year</option>
+                <option value="2018">2018</option>
+                <option value="2017">2017</option>
+                <option value="2016">2016</option>
+                <option value="2015">2015</option>
+                <option value="2014">2014</option>
+                <option value="2013">2013</option>
+                <option value="2012">2012</option>
+                <option value="2011">2011</option>
+                <option value="2010">2010</option>
+                <option value="2009">2009</option>
+                <option value="2008">2008</option>
+                <option value="2007">2007</option>
+                <option value="2006">2006</option>
+                <option value="2005">2005</option>
+                <option value="2004">2004</option>
+                <option value="2003">2003</option>
+                <option value="2002">2002</option>
+                <option value="2001">2001</option>
+                <option value="2000">2000</option>
+            </select>
+        </span>
+        <a href="#" class="whyinfo">Why do I need to provide my date of birth?</a>
+        <br>
+        <br>
+        <span class="femaleradio">
+            <input type="radio" name="gender" id="female" >
+            <label for="female">Female</label>
+        </span>
+        <span class="maleradio">
+            <input type="radio" name="gender" id="male">
+            <label for="male">Male</label>
+        </span>
+        <br>
+        <br>
+        <p class="statement">By clicking Sign Up, you agree to our <a href="#">Terms</a>, <a href="#">Data Policy</a><br> and <a href="#">Cookies Policy</a>. You may receive SMS Notifications <br>from us and can opt out any time.</p>
+        <button type="submit" class="signup"></button>
+        <div class="createpage">
+           <p> <a href="#">Create a Page </a>for celebrity, band or business</p>
+        </div>
+    </div>
+    </div> 
+</div>
+</div>
+<footer>
+    <div class="container">
+        <ul class="list-group list-group-flush" style="flex-wrap: nowrap ">
+            <li class="list-group-item">
+                <a id="English" href="#">English (UK)</a>
+            </li>
+            <li class="list-group-item">
+                <a id="Hausa" href="https://ha-ng.facebook.com/" title="Hausa">Hausa</a>
+            </li>
+            <li class="list-group-item">
+                <a id="france" href="https://fr-fr.facebook.com/" title="French">Français (France)</a>
+            </li>
+            <li class="list-group-item">
+                <a id="Brazil" href="https://pt-br.facebook.com/" title="Portuguese">Português (Brazil)</a>
+            </li>
+            <li class="list-group-item">
+                <a id="Spain" href="https://es-la.facebook.com/" title="Spanish">Español</a>
+            </li>
+            <li class="list-group-item">
+                <a id="Arab" href="https://ar-ar.facebook.com/" title="Arabic">عربية</a>
+            </li>
+            <li class="list-group-item">
+                <a id="Indonesia" href="https://id-id.facebook.com/" title="Indonesian">Bahasa Indonesia</a>
+            </li>
+            <li class="list-group-item">
+                <a id="Germany" href="https://de-de.facebook.com/" title="German">Deutsch</a>
+            </li>
+            <li class="list-group-item">
+                <a id="Japan" href="https://ja-jp.facebook.com/" title="Japanese">日本語</a>
+            </li>
+            <li class="list-group-item">
+                <a id="Italy" href="https://it-it.facebook.com/" title="Italian">Italiano</a>
+            </li>
+            <li class="list-group-item"> 
+                <a id="India" href="https://hi-in.facebook.com/" title="Hindi">हिन्दी</a>
+            </li>
+            <li class="list-group-item"> 
+                <input id="plus" role="button"  rel="dialog"  href="#" title="Show more languages"  type="submit" value="+">
+            </li>
+        </ul>
+    
+        <div class="footerline"></div>
+            <ul class="list-group list-group-flush" >
+                <li class="list-group-item">
+                    <a id="signup" href="/r.php" title="Sign up for Facebook">Sign Up</a>
+                </li class="list-group-item">
+                <li class="list-group-item">
+                    <a id="Login" href="/login/" title="Log in to Facebook">Log In</a>
+                </li>
+                <li class="list-group-item">
+                    <a id="Messenger" href="https://en-gb.messenger.com/" title="Take a look at Messenger.">Messenger</a>
+                </li>
+                <li class="list-group-item">
+                    <a id="Lite" href="/lite/" title="Facebook Lite for Android.">Facebook Lite</a>
+                </li>
+                <li class="list-group-item">
+                    <a id="Find" href="/find-friends?ref=pf" title="Find anyone on the web.">Find Friends</a>
+                </li>
+                <li class="list-group-item">
+                    <a id="People" href="/directory/people_remain/" title="Browse our people directory.">People</a>
+                </li>
+                <li class="list-group-item">
+                    <a id="Profiles" href="/directory/people_sm/" title="Browse our profiles directory.">Profiles</a>
+                </li>
+                <li class="list-group-item">
+                    <a id="Pages" href="/directory/pages/" title="Browse our Pages directory.">Pages</a>
+                </li>
+                <li class="list-group-item">
+                    <a id="Page" href="/pages/category/">Page categories</a>
+                </li>
+                <li class="list-group-item">
+                    <a id="Places" href="/places/" title="Take a look at popular places on Facebook.">Places</a>
+                </li>
+                <li class="list-group-item">
+                    <a id="Games" href="/games/" title="Check out Facebook games.">Games</a>
+                </li>
+                <li class="list-group-item">
+                    <a id="Locations" href="/directory/places/" title="Browse our places directory.">Locations</a>
+                </li>
+                <li class="list-group-item">
+                    <a id="Market" href="/marketplace/directory/" title="Browse our Marketplace product directory.">Marketplace</a>
+                </li>
+                <li class="list-group-item">
+                    <a id="Groups" href="/directory/groups/" title="Browse our Groups directory.">Groups</a>
+                </li>
+                <li class="list-group-item">
+                    <a id="Instagram" href="https://l.facebook.com/l.php?u=https%3A%2F%2Finstagram.com%2F&amp;h=AT0RpB5WcBUuZfNaiEWzGO40ltPzDRjFnvKIuYxNxVFtKzY8H5HfVDxS184mpoN8bTTBoZgb_9n789G3EcHm2FhFv7rYeZQ4WIBYaiGXkQ6dbq_sgoKPbM0u1PbXaPnlsLCSuxz7NVRYihgotRr5" title="Take a look at Instagram" target="_blank">Instagram</a>
+                </li>
+                <li class="list-group-item">
+                    <a id="Local" href="/local/lists/245019872666104/" title="Browse our Local Lists directory.">Local</a>
+                </li>
+                <li class="list-group-item">
+                    <a id="Fund" href="/fundraisers/" title="Donate to worthy causes.">Fundraisers</a>
+                </li>
+                <li class="list-group-item">
+                    <a id="About" href="/facebook" title="Read our blog, discover the resource centre and find job opportunities.">About</a>
+                </li>
+                <li class="list-group-item">
+                    <a id="Ad" href="/ad_campaign/landing.php?placement=pflo&amp;campaign_id=402047449186&amp;extra_1=auto" title="Advertise on Facebook">Create ad</a>
+                </li>
+                <li class="list-group-item">
+                    <a id="Create" href="/pages/create/?ref_type=sitefooter" title="Create a Page">Create Page</a>
+                </li>
+                <li class="list-group-item">
+                    <a id="Dev" href="https://developers.facebook.com/?ref=pf" title="Develop on our platform.">Developers</a>
+                </li>
+                <li class="list-group-item">
+                    <a id="Career" href="/careers/?ref=pf" title="Make your next career move to our brilliant company.">Careers</a>
+                </li>
+                <li class="list-group-item">
+                    <a id="Privacy" href="/privacy/explanation" title="Learn about your privacy and Facebook.">Privacy</a>
+                </li>
+                <li class="list-group-item">
+                    <a id="Cookies" href="/policies/cookies/" title="Learn about cookies and Facebook.">Cookies</a>
+                </li>
+                <li class="list-group-item">
+                    <a id="AdChoices" href="https://www.facebook.com/help/568137493302217" title="Learn about AdChoices.">AdChoices</a>   
+                </li>
+                <li class="list-group-item">
+                    <a id="Terms" href="/policies?ref=pf" title="Review our terms and policies.">Terms</a>
+                </li>
+                <li class="list-group-item">
+                    <a id="Security" href="https://www.facebook.com/help/2687943754764396">Account security</a>
+                </li>
+                <li class="list-group-item">
+                    <a id="Lhelp" href="https://www.facebook.com/help/www/1573156092981768/">Login help</a>
+                </li>
+                <li class="list-group-item">
+                    <a id="Help" href="/help/?ref=pf" title="Visit our Help Centre.">Help</a>
+                </li>             
+            </ul>
+    </div> 
+    <br>       
+        <div class="container copyright">
+            <span> Facebook © 2019</span>
+        </div>    
+    </footer>      
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+  integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+  integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+  <script src="main.js"></script>
+</body>
+</html>    

@@ -15,14 +15,14 @@ import com.xadmin.SpringSecurityJWT.repository.UserRepository;
 public class CustomUserDetailService  implements UserDetailsService{
 
 	@Autowired
-	private UserRepository repository;
+	private UserRepository userRepository;
 	
 	@Override
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
 	
-		User user = repository.findByUserName(username);
+		User user = userRepository.findByUserName(username);
 		
-		return new org.springframework.security.core.userdetails.User(user.getUserName(), user.getPassword(), new ArrayList<>());
+		return new org.springframework.security.core.userdetails.User(user.getEmail(), user.getPassword(), new ArrayList<>());
 		
 	}
 

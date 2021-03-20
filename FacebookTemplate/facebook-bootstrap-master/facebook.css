@@ -1,0 +1,233 @@
+body{
+    font-family: Helvetica, Arial, sans-serif;
+}
+/*--- header ---*/
+.header{
+    background-color: #3B5998;
+    height: 82px;
+} 
+.facebook-text{
+    font-size: 38px;
+    font-weight: 600;
+}
+.facebook-text:hover {
+    text-decoration: none;
+    color: white;
+}
+.login-box{
+    line-height: 16.08px;
+}
+label{
+    color: white;
+    font-size: 12px;
+    line-height: 16.08px;
+}
+.forgotten{
+    color: white;
+    font-size: 12px;
+    font-weight: normal;
+    line-height: 16.08px;
+    text-decoration: none;
+}
+.forgotten:hover{
+    text-decoration: none;
+    color: white;
+}
+.empty{
+    visibility: hidden;
+}
+.login-box button{
+    background-color: rgb(66, 103, 178);
+    border: 1px solid #29487d;
+    cursor: pointer;
+    color: white;
+}
+#gradient{
+    background: linear-gradient(white, #D3D8E8);
+    min-width: 980px;
+    height: 557.4;
+    width: 1263;
+}
+.mainarea{
+    display: grid;
+    grid-template-areas: "firstcol  secondcol"
+}
+img{
+    max-width: 56px;
+    height: auto;
+}
+.firstcol{
+    padding-left: 50px;
+    width: 480px;
+    display: block;
+}
+.head1{
+    color: rgb(14, 56, 95);
+    font-size: 20px;
+    font-weight: bold;
+    display: inline-block;
+    line-height: 29px;
+    margin-top: 40px;
+    word-spacing: -1px;
+}
+.firstcol p{
+    margin-right: 2px;
+    font-family: 'Freight Sans'; 
+    font-weight: normal !important;
+    font-size: 14px;
+    display: flex; 
+    align-items: center;  
+}
+.secondcol{
+    float: right;
+    font-size: 12px;
+    line-height: 16.08px;
+    width: 500px;
+    padding-left: 50px;
+    margin-top: 20px;
+}
+.head2{
+    color: rgb(51, 51, 51);
+    font-size: 36px;
+    font-weight: 600;
+    line-height: 48.24px;
+}
+.free{
+    color: rgb(29, 33, 41);
+    font-size: 19px;
+    font-weight: normal;
+    line-height: 25.444px;
+}
+.grid input{
+    display: inline-block;             
+    font-size:18px;
+    padding:5px 8px;
+    border:1px solid #B0BBD0;
+    border-radius: 5px;
+    margin:6px 0;
+}
+.inputbox{
+    display: inline;
+}
+.mobile{
+    width: 93.8%;
+}
+.password{
+    width: 93.8%;
+}
+#bday{
+    margin-top: 25px;
+    margin-bottom: 15px;
+    font-size: 18px;
+    line-height: 1.34px;
+}
+span select{
+    border:1px solid #B0BBD0;
+    font-size: 13px;
+    height: 30px;
+    padding: 5px;
+    margin-top: 5px;
+}
+.whyinfo{
+    font-size: 10px;
+    cursor: pointer;
+    text-decoration: none;
+    color: #385898;
+}
+.femaleradio, .maleradio{
+    margin-left: 10px;
+}
+.femaleradio label{
+    color: #1d2129;
+    font-size: 15px;
+    line-height: 18px;
+    font-weight: 400;
+    padding: 0 10px 0 3px;
+}
+.maleradio label{
+    color: #1d2129;
+    font-size: 15px;
+    line-height: 18px;
+    font-weight: 400;
+    padding: 0 10px 0 3px;
+}
+.statement{
+    font-size: 11px;
+    color:#646464;
+}
+.statement a{
+    text-decoration: none;
+    color: #385898;
+}
+.signup {
+    font-size: 19px;
+    font-family: 'Freight Sans Bold', Helvetica, Arial, sans-serif !important;
+    font-weight: bold !important;
+    letter-spacing: normal;
+    min-width: 194px;
+    padding: 7px 20px;
+    text-align: center;
+    background: linear-gradient(#67ae55, #578843);
+    background-color: #69a74e;
+    box-shadow: inset 0 1px 1px #a4e388;
+    border-color: #3b6e22 #3b6e22 #2c5115;
+    border: 1px solid;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    letter-spacing: 1px;
+    position: relative;
+    height:39px;
+}
+.signup:after{
+    content:"Sign Up";
+    font-size: 16px;
+    visibility: visible;
+    position: absolute;
+    display: block;
+    color:white;
+    padding: 5px;
+    top: 2px;
+    margin-left: 40px;
+}
+.createpage{
+    font-size: 13px;
+    margin-top: 30px;
+}
+.createpage a{
+   text-decoration: none;
+   color: #385898;
+   font-weight: bold;
+}
+.list-group{
+    color: #385898;
+    display: flex;
+    flex-direction: row;
+    font-size: 12px;
+    flex-wrap: wrap;
+    
+}
+.list-group-item{
+    border-bottom: none;
+    border-top: none;
+    padding: 0.25rem 0.25rem;
+}
+li a{
+    display: inline-block;
+    white-space: nowrap; 
+    text-decoration: none;
+    color: #385898;
+}
+.footerline{
+    border-bottom-color: rgb(221, 223, 226);
+    border-bottom-style: solid;
+    border-bottom-width: 1.11111px;
+    color: rgb(115, 115, 115);
+    height: 7.98611px;
+    width: 1111px;
+}
+.copyright{
+    line-height: 14.74px;
+    font-size: 11px;
+}

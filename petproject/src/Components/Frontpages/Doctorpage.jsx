@@ -1,8 +1,24 @@
-import React from 'react';
-import pet_connect from '../../images/pet_connect.png';   
+import React, { useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { useHistory } from 'react-router';
+import pet_connect from '../../images/pet_connect.png';
 //import newdog from '../images/newdog.jpg';
 import vet from '../../images/vet.png';  
+import RegisterDocAction from '../../Redux/Action/RegisterAction';
 function Doctorpage() {
+const [userState, setuserState] = useState({});
+
+const history=useHistory();
+const dispatch=useDispatch();
+const userId=useSelector(state=>state.userId);
+
+const onClickHandler=(e)=>{
+    e.preventDefault();
+    setuserState({...userState,...{userId}})
+    console.log(userState);
+    dispatch(RegisterDocAction(userState,history));
+}
+
     return (
 
         <div class="container-fluid">
@@ -20,21 +36,39 @@ function Doctorpage() {
                         <form>
                             <div class="form-input">
                                 <span><i class="fas fa-user-alt"></i></span>
-                                <input type="text" name="" placeholder="Qualification" tabindex="10" required />
+                                <input type="text" name="" placeholder="Qualification" tabindex="10" required 
+                                onChange={
+                                    (e)=>{
+                                        const qualification=e.target.value;
+                                        setuserState({...userState,...{qualification}})}
+                                }
+                                />
                             </div>
                             <div class="form-input">
                                 <span><i class="fa fa-key"></i></span>
-                                <input type="text" name="" placeholder="Experience" required />
+                                <input type="text" name="" placeholder="Experience" required 
+                                onChange={
+                                    (e)=>{
+                                        const experience=e.target.value;
+                                        setuserState({...userState,...{experience}})}
+                                }
+                                />
                             </div>
                             <div class="form-input">
                                 <span><i class="fas fa-user-alt"></i></span>
-                                <input type="text" name="" placeholder="Office Address" tabindex="10" required />
+                                <input type="text" name="" placeholder="Office Address" tabindex="10" required 
+                                onChange={
+                                    (e)=>{
+                                        const officeAddress=e.target.value;
+                                        setuserState({...userState,...{officeAddress}})}
+                                }
+                                />
                             </div>
 
                             
 
                             <div class="mb-5">
-                                <button type="submit" class="btn btn-block">
+                                <button type="submit" class="btn btn-block" onClick={onClickHandler}>
                                     Submit
 							</button>
                             </div>

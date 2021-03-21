@@ -1,9 +1,0 @@
-package com.project.service;
-
-import com.project.bean.User;
-
-public interface UserService{
-
-	void addUser(User user);
-	
-}

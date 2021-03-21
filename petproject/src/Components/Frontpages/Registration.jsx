@@ -1,23 +1,38 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useState } from 'react';
 import pet_connect from '../../images/pet_connect.png';
-import registerAxios from './RegisterAxios';
-import Doctorpage from './Doctorpage';
-import {Link} from 'react-router-dom';
+//import registerAxios from './RegisterAxios';
+//import Doctorpage from './Doctorpage';
+import {Link, useHistory} from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import RegisterAction from '../../Redux/Action/RegisterAction';
 
-function Registration() {
+function Registration(props) {
+    
     const [userState, setuserState] = useState({});
-    const [user, setuser] = useState(false);
+    const selector=useSelector(state=>state.userSignIn);
+//    const [user, setuser] = useState(false);
     const [doctor, setdoctor] = useState(false);
     const [foster, setfoster] = useState(false);
+    const dispatch = useDispatch();
+    const history=useHistory();
 
+    const onChangeHandler=(e)=>{
+        e.preventDefault();
+        console.log(userState);
 
-    const onChangeHandler=()=>{
-
-        registerAxios.registerUser(userState);
+        dispatch(RegisterAction(userState,history));
         
-    
+//        registerAxios.registerUser(userState);
     }
+
+
+     useEffect(() => {
+        if(selector){
+            props.history.push("/login")
+        }    
+     }, [selector])
+
 
    
     
@@ -181,7 +196,7 @@ function Registration() {
                                         (e)=>{
                                             const profession=e.target.value;
                                             setuserState({...userState,...{profession}})
-                                            setuser(true);
+                                            //setuser(true);
                                         }
                                     }/>
                                 </label>

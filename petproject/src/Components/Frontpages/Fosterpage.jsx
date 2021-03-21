@@ -1,9 +1,26 @@
-import React from "react";
+import React, { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { useHistory } from "react-router";
 import pet_connect from "../../images/pet_connect.png";
 import vet from '../../images/vet.png';
+import RegisterFosterAction from "../../Redux/Action/RegFosterAction";
+
 //import foster_logo from '../../images/foster_logo.jpg';
 //import fosterimg from '../../images/fosterimg.jpg';
 function Fosterpage() {
+
+    const [userState, setuserState] = useState({});
+    const history=useHistory();
+    const dispatch=useDispatch();
+    const userId=useSelector(state=>state.userId);
+    
+    const onClickHandler=()=>{
+        setuserState({...userState,...{userId}});
+        console.log(userState);
+        dispatch(RegisterFosterAction(userState,history));
+    }
+
+
     return (
         <div class="container-fluid">
 
@@ -47,18 +64,32 @@ function Fosterpage() {
                         <form>
                             <div class="form-input">
                                 <span><i class="fas fa-user-alt"></i></span>
-                                <textarea class="form-control" row="5" id="comment"></textarea>
+                                <textarea class="form-control" row="5" id="comment"
+                                onChange={
+                                    (e)=>{
+                                        const text1=e.target.value;
+                                        setuserState({...userState,...{text1}})
+                                    }
+                                }
+                                ></textarea>
                             </div>
                             <div class="form-input">
                                 <span><i class=""></i></span>
-                                <textarea class="form-control" row="5" id="comment"></textarea>
+                                <textarea class="form-control" row="5" id="comment"
+                                onChange={
+                                    (e)=>{
+                                        const text2=e.target.value;
+                                        setuserState({...userState,...{text2}})
+                                    }
+                                }
+                                ></textarea>
                             </div>
                             </form>
                         <div class="mb-3">
                            
                         </div>
                         
-                        <button type="submit" class="btn btn-block">
+                        <button type="submit" class="btn btn-block" onClick={onClickHandler}>
                             Submit
 							</button>
                         <div class="text-left mb-5 mt-5">

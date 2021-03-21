@@ -1,11 +1,29 @@
-import React from 'react';
-import logo from "../images/logo.png";
-import bg from '../images/bg.png';
-import dog1 from '../assets/dog1.jpg';
-import newdog from '../images/newdog.jpg';
+import React, { useState } from 'react';
+//import logo from "../images/logo.png";
+//import bg from '../images/bg.png';
+//import dog1 from '../assets/dog1.jpg';
+import newdog from '../../images/newdog.jpg';
 
-import pet_connect from '../images/pet_connect.png';
+import pet_connect from '../../images/pet_connect.png';
+import { useDispatch, useSelector } from 'react-redux';
+import { useHistory } from 'react-router';
+import { Link } from 'react-router-dom';
+import { LoginAction } from '../../Redux/Action/LoginAction';
+
 function Login3() {
+
+    
+//    const history = useHistory();
+//    const userSignIn = useSelector(state => state.userSignIn);
+    const [loginState, setloginState] = useState({})
+    const dispatch = useDispatch();
+ 
+    const loginClickHandler=(e)=>{
+        console.log(loginState)
+        e.preventDefault();
+        dispatch(LoginAction(loginState));
+    }
+ 
     return (
         
         
@@ -24,11 +42,26 @@ function Login3() {
                         <form>
                             <div class="form-input">
                                 <span><i class="fas fa-user-alt"></i></span>
-                                <input type="text" name="" placeholder="Username" tabindex="10" required />
+                                <input type="text" name="" placeholder="Username" tabindex="10" required 
+                                    onChange={
+                                        (e) => {
+                                            const email = e.target.value;
+                                            setloginState({ ...loginState, ...{ email } })
+                                        }
+                                    } 
+                                />
                             </div>
                             <div class="form-input">
                                 <span><i class="fa fa-key"></i></span>
-                                <input type="password" name="" placeholder="Password" required />
+                                <input type="password" name="" placeholder="Password" required 
+                                 onChange={
+                                    (e) => {
+                                        const password = e.target.value;
+                                        setloginState({ ...loginState, ...{ password } })
+                                    }
+                                }
+                                
+                                />
                             </div>
 
                             <div class="mb-3 d-flex align-items-center">
@@ -39,15 +72,13 @@ function Login3() {
                             </div>
 
                             <div class="mb-3">
-                                <button type="submit" class="btn btn-block">
+                                <button type="submit" class="btn btn-block" onClick={loginClickHandler}>
                                     Login
 							</button>
                             </div>
 
                             <div class="text-right ">
-                                <a href="reset.html" class="forget-link">
-                                    Forgot password?
-							</a>
+                                <Link className="nav-link" to="/token">TokenTest</Link>
                             </div>
 
                             <div class="text-center mb-3">
@@ -76,6 +107,7 @@ function Login3() {
 
                             <div class="text-center mb-5">
                                 Don't have an account?
+                            <Link className="nav-link" to="/register">Register here</Link>
 							<a class="register-link" href="register.html">Register here</a>
                             </div>
                         </form>

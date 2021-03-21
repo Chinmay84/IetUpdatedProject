@@ -6,6 +6,7 @@ import Registration from './Components/Frontpages/Registration';
 import NavBar from './Components/Frontpages/NavBar';
 import DoctorPage from './Components/Frontpages/Doctorpage'
 import FosterPage from './Components/Frontpages/Fosterpage'
+import Login from './Components/Frontpages/Login3'
 
 function App() {
   return (
@@ -15,6 +16,8 @@ function App() {
           <Switch>
             <Route path="/register" component={Registration}></Route>
             <Route path="/doctor" component={DoctorPage}></Route>
+            <Route path="/foster" component={FosterPage}></Route>
+            <Route path="/login" component={Login}></Route>
           </Switch>
     </div>
     </BrowserRouter>

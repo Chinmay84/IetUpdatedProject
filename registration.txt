@@ -1,0 +1,22 @@
+Nav Link for go next in registration
+
+  			{doctor ?(
+                            <React.Fragment>
+                            <div className="mb-3">
+                                    <Link className="nav-link" to="/doctor" >Go Next</Link>
+                            </div>
+                            </React.Fragment>
+                            ): foster ?(
+                            <React.Fragment>
+                            <div className="mb-3">
+                                    <Link className="nav-link" to="/foster" >Go Next</Link>
+                            </div>
+                            </React.Fragment>
+                            ):(
+                            <React.Fragment>
+                            <div className="mb-3">
+                                <Link className="nav-link" to="/user" >Go Next</Link>
+                            </div>
+                            </React.Fragment>
+                            )
+                            }

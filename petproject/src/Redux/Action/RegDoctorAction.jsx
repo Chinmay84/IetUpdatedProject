@@ -3,7 +3,13 @@ import axios from 'axios';
 const RegisterDocAction = (userState, history) => {
     return async (dispatch) => {
         try {
-            const data = await axios.post("http://localhost:8080/api/registerdoctor", userState);
+            const {registeredUser}=localStorage.getItem("registeredUser");
+            const docUser={
+                ...registeredUser,
+                ...userState
+            }
+            console.log(docUser);
+            const data = await axios.post("http://localhost:8080/api/registerdoctor", docUser);
             console.log(data);
             dispatch({ type: REGISTER_SUCCESS, payload: data });
             history.push("/");

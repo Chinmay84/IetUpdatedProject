@@ -3,7 +3,7 @@ import { useState } from 'react';
 import pet_connect from '../../images/pet_connect.png';
 //import registerAxios from './RegisterAxios';
 //import Doctorpage from './Doctorpage';
-import {Link, useHistory} from 'react-router-dom';
+import {Link, Redirect, useHistory} from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import RegisterAction from '../../Redux/Action/RegisterAction';
 
@@ -20,18 +20,26 @@ function Registration(props) {
     const onChangeHandler=(e)=>{
         e.preventDefault();
         console.log(userState);
-
-        dispatch(RegisterAction(userState,history));
+        localStorage.setItem("registeredUser",userState);
+        if(doctor){
+            <Redirect to="/doctor"/>
+        }else if(foster){
+            <Redirect to="/foster"/>
+        }else{
+            dispatch(RegisterAction(userState,history));
+        }
+       
+//        dispatch(RegisterAction(userState,history));
         
 //        registerAxios.registerUser(userState);
     }
 
 
      useEffect(() => {
-        if(selector){
-            props.history.push("/login")
+//            props.history.push("/login")
+ 
         }    
-     }, [selector])
+     , [])    //selector
 
 
    
@@ -233,30 +241,7 @@ function Registration(props) {
                                     Register
 							</button>
                             </div>
-                            {doctor ?(
-                            <React.Fragment>
-                            <div className="mb-3">
-                                    <Link className="nav-link" to="/doctor" >Go Next</Link>
-                            </div>
-                            </React.Fragment>
-                            ): foster ?(
-                            <React.Fragment>
-                            <div className="mb-3">
-                                    <Link className="nav-link" to="/foster" >Go Next</Link>
-                            </div>
-                            </React.Fragment>
-                            ):(
-                            <React.Fragment>
-                            <div className="mb-3">
-                                <Link className="nav-link" to="/user" >Go Next</Link>
-                            </div>
-                            </React.Fragment>
-                            )
-                            }
                                                    
-
-
-
                             <div className="text-center mb-5">
                                 Already have an account
 							    <a className="login-link" href="login.html">   Login here </a>

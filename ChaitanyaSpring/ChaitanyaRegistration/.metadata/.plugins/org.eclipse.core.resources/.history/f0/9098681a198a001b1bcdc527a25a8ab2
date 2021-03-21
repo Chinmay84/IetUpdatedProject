@@ -1,0 +1,152 @@
+package com.project.service;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.stereotype.Service;
+
+import com.project.beans.Address;
+import com.project.beans.Docter;
+import com.project.beans.FosterHome;
+import com.project.beans.Role;
+import com.project.beans.RoleName;
+import com.project.beans.User;
+import com.project.dto.SignUpRequest;
+import com.project.dto.SignUpRequestForFoster;
+import com.project.dto.SignUpResquestForDoc;
+import com.project.repository.RoleRepository;
+import com.project.repository.UserRepository;
+
+@Service
+public class UserServiceImpl implements UserService {
+
+	@Autowired
+	UserRepository userRepository;
+
+	@Autowired
+	RoleRepository roleRepository;
+
+	@Autowired
+	private PasswordEncoder passwordEncoder;
+
+	@Override
+	public void addUser(SignUpRequest signUpRequest) {
+		// create new User's account
+		User user = new User();
+		user.setName(signUpRequest.getName());
+		user.setEmail(signUpRequest.getEmail());
+		user.setMobileNo(signUpRequest.getMobileNo());
+		user.setGender(signUpRequest.getGender());
+		user.setAlternativeMobileNo(signUpRequest.getAlernativeMobileNo());
+		Address address = new Address();
+		address.setCity(signUpRequest.getCity());
+		address.setState(signUpRequest.getState());
+		address.setPincode(signUpRequest.getPincode());
+		//		address.setAddress(signUpRequest.getAddress());
+		user.setAddress(address);
+		user.setPassword(passwordEncoder
+				.encode(signUpRequest.getPassword()));
+		List<Role> roles = new ArrayList<>();
+		Role userRole = roleRepository.findByRoleName(RoleName.USER)
+				.orElseThrow(() -> new RuntimeException("Error: Role is not found."));
+		roles.add(userRole);
+		user.setRoles(roles);
+		user.setProfession(signUpRequest.getProfession());
+		userRepository.save(user);
+	}
+
+	@Override
+	public void addAdmin(SignUpRequest signUpRequest) {
+		User user = new User();
+		user.setName(signUpRequest.getName());
+		user.setEmail(signUpRequest.getEmail());
+		user.setMobileNo(signUpRequest.getMobileNo());
+		user.setGender(signUpRequest.getGender());
+		Address address = new Address();
+		address.setCity(signUpRequest.getCity());
+		address.setState(signUpRequest.getState());
+		address.setPincode(signUpRequest.getPincode());
+		//		address.setAddress(signUpRequest.getAddress());
+		user.setAddress(address);
+		user.setPassword(passwordEncoder
+				.encode(signUpRequest.getPassword()));
+		List<Role> roles = new ArrayList<>();
+		Role userRole = roleRepository.findByRoleName(RoleName.ADMIN)
+				.orElseThrow(() -> new RuntimeException("Error: Role is not found."));
+		roles.add(userRole);
+		user.setRoles(roles);
+		userRepository.save(user);
+
+	}
+
+	public void addDoc(SignUpResquestForDoc signUpRequestForDoc) {
+
+		User user =new User();
+
+		Docter doc=new Docter();
+		user.setName(signUpRequestForDoc.getName());
+		user.setEmail(signUpRequestForDoc.getEmail());
+		user.setMobileNo(signUpRequestForDoc.getMobileNo());
+		user.setGender(signUpRequestForDoc.getGender());
+		Address address = new Address();
+		address.setCity(signUpRequestForDoc.getCity());
+		address.setState(signUpRequestForDoc.getState());
+		address.setPincode(signUpRequestForDoc.getPincode());
+
+		doc.setExperience(signUpRequestForDoc.getExperience());
+		doc.setOfficeAddress(signUpRequestForDoc.getOfficeAddress());
+		doc.setQualification(signUpRequestForDoc.getQualification());
+		doc.setRating(signUpRequestForDoc.getRating());
+
+		user.setDoc(doc);
+		user.setAddress(address);
+		user.setPassword(passwordEncoder
+				.encode(signUpRequestForDoc.getPassword()));
+		List<Role> roles = new ArrayList<>();
+		Role userRole = roleRepository.findByRoleName(RoleName.USER)
+				.orElseThrow(() -> new RuntimeException("Error: Role is not found."));
+		roles.add(userRole);
+		user.setRoles(roles);
+		user.setProfession(signUpRequestForDoc.getProfession());
+		userRepository.save(user);
+
+
+	}
+
+	public void addFoster(SignUpRequestForFoster signUpRequestForFoster) {
+
+
+		FosterHome fhome=new FosterHome();
+
+		User user =new User();
+
+
+		user.setName(signUpRequestForFoster.getName());
+		user.setEmail(signUpRequestForFoster.getEmail());
+		user.setMobileNo(signUpRequestForFoster.getMobileNo());
+		user.setGender(signUpRequestForFoster.getGender());
+		Address address = new Address();
+		address.setCity(signUpRequestForFoster.getCity());
+		address.setState(signUpRequestForFoster.getState());
+		address.setPincode(signUpRequestForFoster.getPincode());
+
+		fhome.setDescription(signUpRequestForFoster.getDescription());
+		user.setFosterHome(fhome);
+		user.setAddress(address);
+		user.setPassword(passwordEncoder
+				.encode(signUpRequestForFoster.getPassword()));
+		List<Role> roles = new ArrayList<>();
+		Role userRole = roleRepository.findByRoleName(RoleName.USER)
+				.orElseThrow(() -> new RuntimeException("Error: Role is not found."));
+		roles.add(userRole);
+		user.setRoles(roles);
+		user.setProfession(signUpRequestForFoster.getProfession());
+		userRepository.save(user);
+
+
+
+	}
+}
+

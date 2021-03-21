@@ -3,7 +3,12 @@ import axios from 'axios';
 const RegisterFosterAction = (userState, history) => {
     return async (dispatch) => {
         try {
-            const data = await axios.post("http://localhost:8080/api/registerfoster", userState);
+            const {registeredUser}=localStorage.getItem("registeredUser");
+            const fosUser={
+                ...registeredUser,
+                ...userState
+            }
+            const data = await axios.post("http://localhost:8080/api/registerfoster", fosUser);
             console.log(data);
             dispatch({ type: REGISTER_SUCCESS, payload: data });
             history.push("/");
